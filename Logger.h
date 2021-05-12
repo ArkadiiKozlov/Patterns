@@ -1,5 +1,6 @@
 #ifndef LOGGER_H
 #define LOGGER_H
+
 // Logger.h - Абстракция
 using namespace std;
 #include <string>
