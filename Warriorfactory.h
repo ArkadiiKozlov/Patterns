@@ -11,6 +11,7 @@ map <string, Factory *> m_f;
 
 // Иерархия классов игровых персонажей
 
+
 class Warrior
 {
   public:
