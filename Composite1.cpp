@@ -1,17 +1,17 @@
 #include "Composite1.h"
-
-// Вспомогательная функция для создания легиона
+//test on github.com
+// ц╥ц⌠ц░ц▐ц█ц▐ц┤ц│ц■ц┘ц▄ц≤ц▌ц│ц▒ ц├ц∙ц▌ц▀ц┐ц┴ц▒ ц└ц▄ц▒ ц⌠ц▐ц ц└ц│ц▌ц┴ц▒ ц▄ц┘ц┤ц┴ц▐ц▌ц│
 CompositeUnit* createLegion()
 {
-  // Римский легион содержит:
+  // ц╡ц┴ц█ц⌠ц▀ц┴ц┼ ц▄ц┘ц┤ц┴ц▐ц▌ ц⌠ц▐ц└ц┘ц▓ц√ц┴ц■:
   CompositeUnit* legion = new CompositeUnit;
-  // 3000 тяжелых пехотинцев
+  // 3000 ц■ц▒ц√ц┘ц▄ц≥ц┬ ц░ц┘ц┬ц▐ц■ц┴ц▌ц┐ц┘ц≈
   for (int i=0; i<3000; ++i)
     legion->addUnit(new Infantryman);
-  // 1200 легких пехотинцев
+  // 1200 ц▄ц┘ц┤ц▀ц┴ц┬ ц░ц┘ц┬ц▐ц■ц┴ц▌ц┐ц┘ц≈
   for (int i=0; i<1200; ++i)
     legion->addUnit(new Archer);
-  // 300 всадников
+  // 300 ц≈ц⌠ц│ц└ц▌ц┴ц▀ц▐ц≈
   for (int i=0; i<300; ++i)
     legion->addUnit(new Horseman);
 
