@@ -1,17 +1,15 @@
+//////////////////////Factory Method Pattern/////////////////////////
 #ifndef WARRIORFACTORY_H
 #define WARRIORFACTORY_H
 #include <iostream>
 #include <vector>
 #include <map>
-using namespace std;
+namespace FactoryMethod1 {
 
 class Factory;
 
 map <string, Factory *> m_f;
-
 // Иерархия классов игровых персонажей
-
-
 class Warrior
 {
   public:
@@ -20,10 +18,10 @@ class Warrior
     virtual ~Warrior() {}
 };
 
-class Infantryman2: public Warrior
+class Infantryman: public Warrior
 {
   public:
-    Infantryman2 () {
+    Infantryman () {
          cout << "ctor Infantryman2"<< endl;
          a = 1;
     }
@@ -31,40 +29,40 @@ class Infantryman2: public Warrior
     int a;
 
     void info() {
-      cout << "Infantryman2 lives, a: "<<  a << endl;
+      cout << "Infantryman lives, a: "<<  a << endl;
     };
 
 };
 
-class Archer2: public Warrior
+class Archer: public Warrior
 {
   public:
-    Archer2 () {
-      cout << "ctor Archer2"<< endl;
+    Archer () {
+      cout << "ctor Archer"<< endl;
       b = 2;
     }
 
    int b;
 
    void info() {
-      cout << "Archer2 lives, b: "<< b << endl;
+      cout << "Archer lives, b: "<< b << endl;
 
     };
 
 };
 
-class Horseman2: public Warrior
+class Horseman: public Warrior
 {
   public:
-    Horseman2 () {
-      cout << "ctor Horseman2" << endl;
+    Horseman () {
+      cout << "ctor Horseman" << endl;
       c = 3;
     }
 
     int c;
 
     void info() {
-      cout << "Horseman2 lives, c: "<< c << endl;
+      cout << "Horseman lives, c: "<< c << endl;
     };
 };
 
@@ -82,26 +80,26 @@ class InfantryFactory: public Factory
   public:
     InfantryFactory () {
       cout << "ctor InfantryFactory was called" << endl;
-      m_f["Infantryman2"] = this;
+      m_f["Infantryman"] = this;
 
     }
 
     Warrior* createWarrior() {
-      return new Infantryman2;
+      return new Infantryman;
     }
 };
 
 //create factory
-InfantryFactory infanty_factory1;
+InfantryFactory infanty_factory;
 
 class ArchersFactory: public Factory
 {
   public:
     ArchersFactory () {
-      m_f["Archer2"] = this;
+      m_f["Archer"] = this;
     }
     Warrior* createWarrior() {
-      return new Archer2;
+      return new Archer;
     }
 };
 ArchersFactory archersFactory1;
@@ -110,14 +108,14 @@ class CavalryFactory: public Factory
 {
   public:
     CavalryFactory () {
-      m_f["Horseman2"] = this;
+      m_f["Horseman"] = this;
     }
 
     Warrior* createWarrior() {
-      return new Horseman2;
+      return new Horseman;
     }
 };
-CavalryFactory cavalryFactory1;
-
+CavalryFactory cavalryFactory;
+};
 #endif // WARRIORFACTORY_H
 

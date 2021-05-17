@@ -1,4 +1,4 @@
-// Logger.cpp - Абстракция
+///////////////////////Bridge Pattern///////////////////////
 #include "Logger.h"
 #include "LoggerImpl.h"
 

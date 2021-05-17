@@ -1,12 +1,11 @@
+///////////////////////Bridge Pattern///////////////////////
 #ifndef LOGGER_H
 #define LOGGER_H
 
-// Logger.h - Абстракция
-using namespace std;
 #include <string>
+using namespace std;
 
-
-// Опережающее объявление
+// Leading declaration
 class LoggerImpl;
 
 class Logger

@@ -1,7 +1,6 @@
-// LoggerImpl.cpp - Реализация
+///////////////////////Bridge Pattern///////////////////////
 #include <iostream>
 #include "LoggerImpl.h"
-
 
 void ST_LoggerImpl::console_log( string & str )
 {

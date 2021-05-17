@@ -1,9 +1,8 @@
+///////////////////////Bridge Pattern///////////////////////
 #ifndef LOGGERIMP_H
 #define LOGGERIMP_H
-// LoggerImpl.h - Реализация
 using namespace std;
 #include <string>
-
 
 class LoggerImpl
 {
