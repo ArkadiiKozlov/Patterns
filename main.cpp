@@ -1,7 +1,9 @@
 #include <string>
+#include "Warriorfactory.h"
+#include "Adapter.h"
 #include "Logger.h"
 #include "Composite1.h"
-#include "Warriorfactory.h"
+
 
 using namespace FactoryMethod1;
 
@@ -24,7 +26,20 @@ int main()
   cout << endl << "Structural Patterns" << endl;
   ////////////////////////Adapter///////////////////////////////
   cout << "Adapter" << endl;
-  cout << "...." << endl;
+  std::cout << "Client: I can work just fine with the Target objects:\n";
+  Target *target = new Target;
+  ClientCode(target);
+  std::cout << "\n\n";
+  Adaptee *adaptee = new Adaptee;
+  std::cout << "Client: The Adaptee class has a weird interface. See, I don't understand it:\n";
+  std::cout << "Adaptee: " << adaptee->SpecificRequest();
+  std::cout << "\n\n";
+  std::cout << "Client: But I can work with it via the Adapter:\n";
+  Adapter *adapter = new Adapter(adaptee);
+  ClientCode(adapter);
+  delete adaptee;
+  delete adapter;
+  delete target;
 
   ////////////////////////Bridge Patterns//////////////////////
   cout << endl << "Bridge" << endl;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+using namespace std;
 namespace FactoryMethod1 {
 
 class Factory;
