@@ -1,27 +1,42 @@
 #include <string>
 #include "Warriorfactory.h"
+#include "Prototype1.h"
 #include "Adapter.h"
 #include "Logger.h"
 #include "Composite1.h"
 
 
-using namespace FactoryMethod1;
+
+
 
 int main()
 {
+
   cout << "Design Patterns" << endl;
   //////////////////////Factory Method/////////////////////////
-  cout << "Factory Method Pattern 1" << endl;
+  cout << "Factory Method Pattern 1" << endl;  
   string s = "Infantryman"; // reading from the file, for example
-  vector<Warrior*> v;
-  v.push_back(m_f[s]-> createWarrior());
+  //using namespace FactoryMethod1;
+  vector<FactoryMethod1::Warrior*> v;
+  v.push_back(FactoryMethod1::m_f[s]-> createWarrior());
   s = "Archer";
-  v.push_back(m_f[s]-> createWarrior());
+  v.push_back(FactoryMethod1::m_f[s]-> createWarrior());
   s = "Horseman";
-  v.push_back(m_f[s]-> createWarrior());
+  v.push_back(FactoryMethod1::m_f[s]-> createWarrior());
   for(int i=0; i<v.size(); i++) {
        v[i]->info();
   }
+
+  //////////////////////Prototype/////////////////////////
+  cout<< endl << "Prototype" << endl;
+  //using namespace PrototypePattern;
+  PrototypePattern::PrototypeFactory factory;
+  std::vector< PrototypePattern::Warrior* > v2;
+  v2.push_back( factory.createInfantrman());
+  v2.push_back( factory.createArcher());
+  v2.push_back( factory.createHorseman());
+  for(int i=0; i<v2.size(); i++)
+      v2[i]->info();
 
   cout << endl << "Structural Patterns" << endl;
   ////////////////////////Adapter///////////////////////////////
