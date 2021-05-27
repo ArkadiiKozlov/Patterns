@@ -4,7 +4,7 @@
 #include "Adapter.h"
 #include "Logger.h"
 #include "Composite1.h"
-
+#include "Command.h"
 
 
 
@@ -75,6 +75,19 @@ int main()
   army->addUnit( createLegion());
   cout << "Roman army damaging strength is "<< army->getStrength() << endl;
   delete army;
+
+  //////////////////////////Behavior Patterns/////////////////////
+  cout << endl << "Behavior Patterns" << endl;
+  //////////////////////////Command///////////////////////////////
+  cout << "Command" << endl;
+  //Клиентский код может параметризовать отправителя любыми командами.
+  Invoker *invoker = new Invoker;
+  invoker->SetOnStart(new SimpleCommand("Say Hi!"));
+  Receiver *receiver = new Receiver;
+  invoker->SetOnFinish(new ComplexCommand(receiver, "Send email", "Save report"));
+  invoker->DoSomethingImportant();
+  delete invoker;
+  delete receiver;
 
   return 0;
 }
