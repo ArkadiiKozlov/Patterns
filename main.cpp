@@ -5,9 +5,8 @@
 #include "Logger.h"
 #include "Composite1.h"
 #include "Command.h"
-
-
-
+#include "Iterator.h"
+#include "Iterator2.h"
 
 int main()
 {
@@ -58,13 +57,13 @@ int main()
 
   ////////////////////////Bridge Patterns//////////////////////
   cout << endl << "Bridge" << endl;
-  string s2 = "log.txt";
+  string str2 = "log.txt";
   //Logger * p = new FileLogger( string("log.txt"));
-  Logger * p = new FileLogger(s2);
-  string s1 = "message";
+  Logger * p = new FileLogger(str2);
+  string str1 = "message";
   //p->log(std::string("message"));
   //p->log("message");
-  p->log(s1);
+  p->log(str1);
   delete p;
 
   ///////////////////////////Composite Pattern///////////////////
@@ -76,7 +75,6 @@ int main()
   cout << "Roman army damaging strength is "<< army->getStrength() << endl;
   delete army;
 
-  //////////////////////////Behavior Patterns/////////////////////
   cout << endl << "Behavior Patterns" << endl;
   //////////////////////////Command///////////////////////////////
   cout << "Command" << endl;
@@ -88,6 +86,37 @@ int main()
   invoker->DoSomethingImportant();
   delete invoker;
   delete receiver;
+
+  //////////////////////////Iterator/////////////////////////////
+  cout << "Iterator" << endl;
+  Stack s1;
+  for (int i = 1; i < 5; i++)
+    s1.push(i);
+  Stack s2(s1), s3(s1), s4(s1), s5(s1);
+  s3.pop();
+  s5.pop();
+  s4.push(2);
+  s5.push(9);
+  cout << "1 == 2 is " << (s1 == s2) << endl;
+  cout << "1 == 3 is " << (s1 == s3) << endl;
+  cout << "1 == 4 is " << (s1 == s4) << endl;
+  cout << "1 == 5 is " << (s1 == s5) << endl;
+
+  cout << "Iterator2" << endl;
+  Stack2 s1_2;
+  int i;
+  for (i = 1; i < 5; i++)
+    s1_2.push(i);
+  Stack2 s2_2(s1_2), s3_2(s1_2), s4_2(s1_2), s5_2(s1_2);
+  s3_2.pop();
+  s5_2.pop();
+  s4_2.push(2);
+  s5_2.push(9);
+  cout << "1 == 2 is " << (s1_2 == s2_2) << endl;
+  cout << "1 == 3 is " << (s1_2 == s3_2) << endl;
+  cout << "1 == 4 is " << (s1_2 == s4_2) << endl;
+  cout << "1 == 5 is " << (s1_2 == s5_2) << endl;
+
 
   return 0;
 }
