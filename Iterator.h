@@ -1,6 +1,6 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
-
+//07.07.2021, from home computer
 class StackIter;
 
 class Stack
