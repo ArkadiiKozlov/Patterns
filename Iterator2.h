@@ -1,6 +1,6 @@
 #ifndef ITERATOR2_H
 #define ITERATOR2_H
-
+// commit from vega4h 09.07.2021 iterator2.h
 class Stack2
 {
     int items[10];
