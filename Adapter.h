@@ -50,3 +50,4 @@ void ClientCode(const Target *target) {
 }
 #endif // ADAPTER_H
 
+//commit from mint 17.2, work
