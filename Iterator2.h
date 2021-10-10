@@ -56,6 +56,5 @@ bool operator == (const Stack2 &l, const Stack2 &r)
       break;
   return !itl() && !itr();
 }
-
 #endif // ITERATOR2_H
 
