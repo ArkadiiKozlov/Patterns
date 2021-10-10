@@ -116,11 +116,6 @@ int main()
   cout << "1 == 3 is " << (s1_2 == s3_2) << endl;
   cout << "1 == 4 is " << (s1_2 == s4_2) << endl;
   cout << "1 == 5 is " << (s1_2 == s5_2) << endl;
-   
-  // branch stdying, vega4k, 2 commit
 
-  // branch stdying, vega4k, 3 commit
-  
-  // commit from vega4k
   return 0;
 }
