@@ -10,6 +10,7 @@ namespace FactoryMethod1 {
 class Factory;
 
 map <string, Factory *> m_f;
+
 // Иерархия классов игровых персонажей
 class Warrior
 {

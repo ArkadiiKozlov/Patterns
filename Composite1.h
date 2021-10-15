@@ -47,7 +47,7 @@ class CompositeUnit: public Unit
   public:
     int getStrength() {
       int total = 0;
-      for(int i=0; i<c.size(); ++i)
+      for(unsigned int i=0; i<c.size(); ++i)
         total += c[i]->getStrength();
       return total;
     }
@@ -59,7 +59,7 @@ class CompositeUnit: public Unit
         //printf ("I'am composite object\n");
     }
     ~CompositeUnit() {
-      for(int i=0; i<c.size(); ++i)
+      for(unsigned int i=0; i<c.size(); ++i)
         delete c[i];
     }
   private:

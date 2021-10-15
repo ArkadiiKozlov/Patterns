@@ -1,16 +1,20 @@
 #ifndef ADAPTER_H
 #define ADAPTER_H
 #include <algorithm>
+#include <string>
+#include <iostream>
 /**
  * Целевой класс объявляет интерфейс, с которым может работать клиентский код.
  */
-class Target {
- public:
-  virtual ~Target() = default;
+//using namespace std;
 
-  virtual std::string Request() const {
-    return "Target: The default target's behavior.";
-  }
+class Target {
+    public:
+        virtual ~Target() = default;
+        
+        virtual std::string Request() const {
+            return "Target: The default target's behavior.";
+        }
 };
 
 /**
@@ -19,10 +23,10 @@ class Target {
  * некоторой доработке, прежде чем клиентский код сможет его использовать.
  */
 class Adaptee {
- public:
-  std::string SpecificRequest() const {
-    return ".eetpadA eht fo roivaheb laicepS";
-  }
+    public:
+        std::string SpecificRequest() const {
+            return ".eetpadA eht fo roivaheb laicepS";
+        }
 };
 
 /**
@@ -30,23 +34,23 @@ class Adaptee {
  * интерфейсом.
  */
 class Adapter : public Target {
- private:
-  Adaptee *adaptee_;
-
- public:
-  Adapter(Adaptee *adaptee) : adaptee_(adaptee) {}
-  std::string Request() const override {
-    std::string to_reverse = this->adaptee_->SpecificRequest();
-    std::reverse(to_reverse.begin(), to_reverse.end());
-    return "Adapter: (TRANSLATED) " + to_reverse;
-  }
+    private:
+        Adaptee *adaptee_;
+        
+    public:
+        Adapter(Adaptee *adaptee) : adaptee_(adaptee) {}
+        std::string Request() const override {
+            std::string to_reverse = this->adaptee_->SpecificRequest();
+            std::reverse(to_reverse.begin(), to_reverse.end());
+            return "Adapter: (TRANSLATED) " + to_reverse;
+        }
 };
 
 /**
  * Клиентский код поддерживает все классы, использующие целевой интерфейс.
  */
-void ClientCode(const Target *target) {
-  std::cout << target->Request();
+inline void ClientCode(const Target *target) {
+    std::cout << target->Request();
 }
 #endif // ADAPTER_H
 
